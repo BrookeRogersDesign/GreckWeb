@@ -13,7 +13,7 @@
   --olive: #515211;
   --red: #FC2E04;
 
-  --sans: 'Neue Montreal', 'Helvetica Neue', Arial, sans-serif;
+  --sans: 'Neue Montreal', 'Inter', 'Helvetica Neue', Arial, sans-serif;
   --mono: 'Roboto Mono', ui-monospace, Menlo, monospace;
 
   --gutter: clamp(16px, 4vw, 56px);
