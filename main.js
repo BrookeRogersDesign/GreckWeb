@@ -4,17 +4,19 @@
 const PHOTO = (n) => `assets/photos/${n}.jpg`;
 const DOTS = [1, 2, 3, 4, 5].map((n) => `assets/dots/dot-${n}.svg`);
 
-// Placeholder products: names, prices, photos and sold status are stand-ins until Kenzie's listings are in.
-const PRODUCTS = [
-  { slug: 'the-eye', name: 'The Eye', series: 'Bugs', price: 185, img: ['held-wide', 'sweater-dots', 'hero-main', 'eye-two-bags'], tag: 'New' },
-  { slug: 'spot-check', name: 'Spot Check', series: 'Dots', price: 165, img: ['face-dots', 'wine-dots', 'mg-dotset'], tag: 'New' },
-  { slug: 'window-pane', name: 'Window Pane', series: 'Color', price: 195, img: ['plaid-hold', 'plaid-stack', 'green-wall', 'orange-wall'], tag: 'New' },
-  { slug: 'swirl-no-4', name: 'Swirl No. 4', series: 'Bugs', price: 185, img: ['bag-swirl', 'two-hands', 'held-wide-2'] },
-  { slug: 'neon-pillow', name: 'Neon Pillow', series: 'Color', price: 175, img: ['walking', 'neon-hold'] },
-  { slug: 'big-stack', name: 'Big Stack', series: 'Color', price: 210, img: ['hero-stack', 'mg-holding'], sold: true },
-  { slug: 'wave', name: 'Wave', series: 'Bugs', price: 185, img: ['held-wide-2', 'two-hands', 'hero-wide'] },
-  { slug: 'plaid-again', name: 'Plaid Again', series: 'Color', price: 195, img: ['green-wall', 'orange-wall', 'plaid-stack'], sold: true },
+// Bags come from the GRECK Bags Google Sheet (loaded by bags.js). This built-in list is the
+// fallback if the sheet can't be reached. Slug = the bag's code, e.g. GR-BUG-001 -> gr-bug-001.
+const BUILT_IN = [
+  { slug: 'gr-bug-001', name: 'The Eye', series: 'Bugs', price: 185, img: ['held-wide', 'sweater-dots', 'hero-main', 'eye-two-bags'], tag: 'New' },
+  { slug: 'gr-dot-001', name: 'Spot Check', series: 'Dots', price: 165, img: ['face-dots', 'wine-dots', 'mg-dotset'], tag: 'New' },
+  { slug: 'gr-clr-001', name: 'Window Pane', series: 'Color', price: 195, img: ['plaid-hold', 'plaid-stack', 'green-wall', 'orange-wall'], tag: 'New' },
+  { slug: 'gr-bug-002', name: 'Swirl No. 4', series: 'Bugs', price: 185, img: ['bag-swirl', 'two-hands', 'held-wide-2'] },
+  { slug: 'gr-clr-002', name: 'Neon Pillow', series: 'Color', price: 175, img: ['walking', 'neon-hold'] },
+  { slug: 'gr-clr-003', name: 'Big Stack', series: 'Color', price: 210, img: ['hero-stack', 'mg-holding'], sold: true },
+  { slug: 'gr-bug-003', name: 'Wave', series: 'Bugs', price: 185, img: ['held-wide-2', 'two-hands', 'hero-wide'] },
+  { slug: 'gr-clr-004', name: 'Plaid Again', series: 'Color', price: 195, img: ['green-wall', 'orange-wall', 'plaid-stack'], sold: true },
 ];
+const PRODUCTS = window.SHEET_BAGS || BUILT_IN;
 const productUrl = (p) => `product.html?p=${p.slug}`;
 
 const page = document.body.dataset.page;
@@ -75,7 +77,7 @@ const card = (p) => `
       ${p.sold ? '<span class="card-tag">Sold</span>' : p.tag ? `<span class="card-tag">${p.tag}</span>` : ''}
       <a class="card-link" href="${productUrl(p)}" aria-label="${p.name}"></a>
       <img src="${PHOTO(p.img[0])}" alt="${p.name}, a hand-painted GRECK bag" loading="lazy">
-      <img src="${PHOTO(p.img[1])}" alt="" loading="lazy">
+      <img src="${PHOTO(p.img[1] || p.img[0])}" alt="" loading="lazy">
       ${p.sold ? '' : '<button class="card-add" type="button">Add to bag</button>'}
     </div>
     <div class="card-meta">
@@ -109,7 +111,8 @@ if (current) {
             <details>
               <summary>Details</summary>
               <p>Hand-sewn and hand-painted by MacKenzie in acrylic paint and marker. The bag in the photos is the exact bag you'll get.</p>
-              <p class="tbc">Kenzie to add size, closure, strap and lining details.</p>
+              ${p.size ? `<p>Size: ${p.size}</p>` : ''}
+              ${p.details ? `<p>${p.details}</p>` : '<p class="tbc">Kenzie to add size, closure, strap and lining details.</p>'}
             </details>
             <details>
               <summary>Shipping + returns</summary>
