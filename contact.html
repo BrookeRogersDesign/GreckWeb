@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Contact · GRECK</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=19">
+</head>
+<body data-page="contact">
+  <div data-header></div>
+
+  <main>
+    <section class="page-hero">
+      <div class="contact">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h1>Say hi.</h1>
+          <p class="page-hero-lede">Questions about an order, a custom piece, wholesale or press. Kenzie reads every message.</p>
+
+          <form novalidate style="margin-top:clamp(28px,3vw,44px)">
+            <div class="field">
+              <span class="eyebrow" style="color:var(--muted);font-size:11px">What's it about?</span>
+              <div class="topics">
+                <input type="radio" name="topic" id="t-order" value="order" checked><label for="t-order">An order</label>
+                <input type="radio" name="topic" id="t-custom" value="custom"><label for="t-custom">Custom piece</label>
+                <input type="radio" name="topic" id="t-wholesale" value="wholesale"><label for="t-wholesale">Wholesale</label>
+                <input type="radio" name="topic" id="t-press" value="press"><label for="t-press">Press</label>
+                <input type="radio" name="topic" id="t-other" value="other"><label for="t-other">Other</label>
+              </div>
+            </div>
+            <div class="field"><label for="c-name">Name</label><input id="c-name" name="name" autocomplete="name" required></div>
+            <div class="field"><label for="c-email">Email</label><input id="c-email" name="email" type="email" autocomplete="email" required></div>
+            <div class="field"><label for="c-msg">Message</label><textarea id="c-msg" name="message" required></textarea></div>
+            <button class="btn" type="submit">Send message</button>
+          </form>
+          <p class="form-note" role="status" aria-live="polite"></p>
+
+          <div class="ways">
+            <a class="way" href="mailto:greck.inquiry@gmail.com"><span>Email</span><strong>greck.inquiry@gmail.com</strong></a>
+            <a class="way" href="https://www.instagram.com/greckdotcom/" target="_blank" rel="noopener"><span>Instagram</span><strong>@greckdotcom</strong></a>
+            <a class="way" href="https://www.depop.com/greckbags/" target="_blank" rel="noopener"><span>Depop</span><strong>@greckbags</strong></a>
+          </div>
+        </div>
+        <figure class="contact-photo reveal"><img src="assets/photos/two-hands.jpg" alt="Two painted bags held up against a pink plaster wall" loading="lazy"></figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <p class="faq-more">Looking for shipping, returns or bag care? <a class="link-cta" href="care.html">Read the Care + FAQ</a></p>
+    </section>
+  </main>
+
+  <div data-footer></div>
+  <script src="main.js?v=17"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+assets/fonts/
+.DS_Store
+*.mp4
+*.pdf
+*.docx
+.claude/

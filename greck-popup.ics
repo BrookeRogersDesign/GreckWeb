@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//GRECK//Pop-up//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:greck-popup-2026-12-05@gotgrecked.com
+DTSTAMP:20261115T000000Z
+DTSTART:20261205T170000Z
+DTEND:20261205T220000Z
+SUMMARY:GRECK pop-up
+LOCATION:Hotel Saint Cecilia\, Austin\, TX
+DESCRIPTION:One day only. A whole room of one-of-one bags\, and the artist who made every single one. https://gotgrecked.com
+END:VEVENT
+END:VCALENDAR
