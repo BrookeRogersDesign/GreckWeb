@@ -1,7 +1,7 @@
 /* GRECK shop draft. Quiet editorial frame (after Deadly Ponies); the color lives in Kenzie's bags. */
-@font-face { font-family: 'Neue Montreal'; src: url(assets/fonts/PPNeueMontreal-Regular.otf) format('opentype'); font-weight: 400; font-display: swap; }
-@font-face { font-family: 'Neue Montreal'; src: url(assets/fonts/PPNeueMontreal-Light.otf) format('opentype'); font-weight: 300; font-display: swap; }
-@font-face { font-family: 'Neue Montreal'; src: url(assets/fonts/PPNeueMontreal-Italic.otf) format('opentype'); font-style: italic; font-display: swap; }
+@font-face { font-family: 'GRECK Sans'; src: url(assets/fonts/PPNeueMontreal-Regular.otf) format('opentype'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'GRECK Sans'; src: url(assets/fonts/PPNeueMontreal-Light.otf) format('opentype'); font-weight: 300; font-display: swap; }
+@font-face { font-family: 'GRECK Sans'; src: url(assets/fonts/PPNeueMontreal-Italic.otf) format('opentype'); font-style: italic; font-display: swap; }
 
 :root {
   --paper: #FBF9F5;
@@ -13,7 +13,7 @@
   --olive: #515211;
   --red: #FC2E04;
 
-  --sans: 'Neue Montreal', 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  --sans: 'GRECK Sans', 'Inter', 'Helvetica Neue', Arial, sans-serif;
   --mono: 'Roboto Mono', ui-monospace, Menlo, monospace;
 
   --gutter: clamp(16px, 4vw, 56px);
